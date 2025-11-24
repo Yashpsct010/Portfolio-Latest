@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Mode (Neo-Brutalist) */
+  --background: #ffffff;
+  --surface: #f3f4f6;
+  --primary: #2563eb; /* Bold Blue */
+  --secondary: #16a34a; /* Bold Green */
+  --accent: #dc2626; /* Bold Red */
+  --border: #000000;
+  --text-main: #000000;
+}
+
+.dark {
+  /* Dark Mode (Neo-Brutalist Dark) */
+  --background: #0a0a0a;
+  --surface: #171717;
+  --primary: #a78bfa; /* Soft Purple */
+  --secondary: #34d399; /* Soft Emerald */
+  --accent: #fb7185; /* Soft Rose */
+  --border: #ffffff;
+  --text-main: #ffffff;
+}
+
+body {
+  @apply bg-background text-[var(--text-main)] font-sans antialiased overflow-x-hidden transition-colors duration-300 cursor-none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading;
+}
+
+a, button, input, textarea, .clickable {
+  @apply cursor-none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-none border;
+  border-color: var(--border);
+}
+
+/* Neo-Brutalist Utilities */
+.neo-box {
+  @apply border-2 transition-all duration-200;
+  border-color: var(--border);
+  box-shadow: 4px 4px 0px 0px var(--border);
+}
+
+.neo-box:hover {
+  @apply translate-x-[2px] translate-y-[2px];
+  box-shadow: 2px 2px 0px 0px var(--border);
+}
+
+.neo-button {
+  @apply px-6 py-3 bg-primary text-white font-bold border-2 transition-all active:translate-x-[4px] active:translate-y-[4px] active:shadow-none;
+  border-color: var(--border);
+  box-shadow: 4px 4px 0px 0px var(--border);
+}
+
+.neo-button:hover {
+  @apply translate-x-[2px] translate-y-[2px];
+  box-shadow: 2px 2px 0px 0px var(--border);
+}
+
+.neo-input {
+  @apply w-full bg-background border-2 p-3 focus:outline-none focus:ring-2 focus:ring-primary transition-all;
+  border-color: var(--border);
+  color: var(--text-main);
+}
