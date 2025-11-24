@@ -1,12 +1,30 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import { CONTACT } from '../constants';
+import axios from 'axios';
 
 const Contact = () => {
-    const handleSubmit = (e) => {
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState(null); // 'success' | 'error' | null
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission (e.g., send to backend or email service)
-        alert("Thanks for reaching out! This is a demo form.");
+        setLoading(true);
+        setStatus(null);
+
+        try {
+            await axios.post('/api/contact', formData);
+            setStatus('success');
+            setFormData({ name: '', email: '', message: '' });
+            setTimeout(() => setStatus(null), 5000);
+        } catch (error) {
+            console.error('Error sending message:', error);
+            setStatus('error');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -83,6 +101,8 @@ const Contact = () => {
                                 <input
                                     type="text"
                                     id="name"
+                                    value={formData.name}
+                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                     className="w-full bg-background border border-neoborder rounded-lg px-4 py-3 text-black dark:text-white focus:outline-none focus:border-primary transition-colors"
                                     placeholder="Your Name"
                                     required
@@ -93,6 +113,8 @@ const Contact = () => {
                                 <input
                                     type="email"
                                     id="email"
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     className="w-full bg-background border border-neoborder rounded-lg px-4 py-3 text-black dark:text-white focus:outline-none focus:border-primary transition-colors"
                                     placeholder="your@email.com"
                                     required
@@ -103,16 +125,27 @@ const Contact = () => {
                                 <textarea
                                     id="message"
                                     rows={4}
+                                    value={formData.message}
+                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                     className="w-full bg-background border border-neoborder rounded-lg px-4 py-3 text-black dark:text-white focus:outline-none focus:border-primary transition-colors resize-none"
                                     placeholder="How can I help you?"
                                     required
                                 />
                             </div>
+
+                            {status === 'success' && (
+                                <p className="text-green-500 text-sm">Message sent successfully!</p>
+                            )}
+                            {status === 'error' && (
+                                <p className="text-red-500 text-sm">Failed to send message. Please try again.</p>
+                            )}
+
                             <button
                                 type="submit"
-                                className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 rounded-lg transition-colors"
+                                disabled={loading}
+                                className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 rounded-lg transition-colors disabled:opacity-50"
                             >
-                                Send Message
+                                {loading ? 'Sending...' : 'Send Message'}
                             </button>
                         </form>
                     </motion.div>

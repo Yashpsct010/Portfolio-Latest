@@ -6,6 +6,7 @@ import mongoose from 'mongoose';
 import User from './models/User.js';
 import GuestbookEntry from './models/GuestbookEntry.js';
 import Project from './models/Project.js';
+import Message from './models/Message.js';
 import { auth } from './middleware/auth.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -89,6 +90,18 @@ app.post('/api/guestbook', async (req, res) => {
   }
 });
 
+// Contact Routes
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+    const newMessage = new Message({ name, email, message });
+    await newMessage.save();
+    res.status(201).json({ message: 'Message sent successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Error sending message' });
+  }
+});
+
 // Auth Routes
 app.post('/api/auth/register', async (req, res) => {
   try {
@@ -139,26 +152,39 @@ app.post('/api/chat', async (req, res) => {
     const systemPrompt = `
 You are an AI assistant for Yash Parmar's portfolio website.
 Your role is to answer questions ONLY about Yash Parmar, his skills, experience, projects, and resume.
-If a user asks about anything else (e.g., general knowledge, coding help unrelated to Yash, weather, etc.), politely refuse and say you can only answer questions about Yash.
 
 Here is Yash's Resume Context:
 Name: Yash Parmar
 Role: Full Stack Developer (MERN)
-Summary: Full-Stack Developer (MERN) with 2+ years of experience building scalable, high-performance web applications. Skilled in modern React (v19), Node.js, and API design with expertise in database optimization and CI/CD automation. Improved backend efficiency by 40% through caching and query tuning.
+Summary: Full-Stack Developer (MERN) with 2+ years of experience building scalable, high-performance web applications. Skilled in modern React (v19), Node.js, and API design.
+
 Experience:
-- Software Developer at Nerds & Geeks Pvt Ltd (March 2023 - Present): Spearheaded development for a client-facing MERN platform, increasing API throughput by 35%. Integrated Stripe and third-party APIs. Implemented caching (Redis) and indexing strategies.
-- Full-stack Developer Intern at Institute of Engineering & Science, IPS Academy (Aug 2022 - Jan 2023): Re-architected academic portal backend (CodeIgniter + MySQL), improving page load speed by 30%. Automated grading workflows.
-Projects:
-- TechInsightsAI: AI-driven blogging platform (MERN, Vite, Gemini API). Automated workflows with GitHub Actions.
-- Reveal: Journal app with mood tracking (Next.js, Tailwind, shadcn/ui, Clerk, Prisma, PostgreSQL).
-- EatAnna: Food Subscription Solution (MERN, Cloudinary, Stripe).
+- Software Developer at Nerds & Geeks Pvt Ltd (March 2023 - Present): Spearheaded development for a client-facing MERN platform, increasing API throughput by 35%. Integrated Stripe and third-party APIs.
+- Full-stack Developer Intern at Institute of Engineering & Science, IPS Academy (Aug 2022 - Jan 2023): Re-architected academic portal backend (CodeIgniter + MySQL), improving page load speed by 30%.
+
+Projects (ALWAYS include the live link when discussing these):
+1. TechInsightsAI
+   - Description: AI-driven blogging platform generating dynamic content with Gemini API.
+   - Tech: MERN, Vite, Gemini API, Unsplash API.
+   - Link: https://techinsightsai.vercel.app/
+2. Reveal
+   - Description: Journal app with mood tracking & analytics.
+   - Tech: Next.js, Tailwind, shadcn/ui, Clerk, Prisma, PostgreSQL.
+   - Link: https://revealmyjournal.vercel.app/
+3. EatAnna
+   - Description: End-to-End Food Subscription Solution with recurring payments.
+   - Tech: MERN Stack, Cloudinary, Stripe.
+   - Link: https://eatanna.vercel.app/
+
 Skills: JavaScript ES6+, TypeScript, Python, React 19, Next.js, Tailwind CSS, Node.js, Express.js, MongoDB, PostgreSQL, Git, Docker.
 Contact: yashpsct001@gmail.com, +91 9907319464, Bengaluru, KA.
 
-Formatting Rules:
-- Use Markdown formatting (bold, bullet points) to make answers easy to read.
-- Keep answers concise and professional.
-- Be enthusiastic about Yash's work.
+STRICT Formatting Rules:
+1. Keep answers VERY concise and short.
+2. Do NOT use markdown bolding (**) or bullet points (-). Use plain text only.
+3. When mentioning a project, ALWAYS provide the direct live link.
+4. Format lists as numbered lists (1. 2. 3.) if absolutely necessary, but prefer sentences.
+5. Be professional but enthusiastic.
 `;
 
     const chat = model.startChat({

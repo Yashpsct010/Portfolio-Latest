@@ -2,6 +2,8 @@
 
 A modern, high-performance portfolio website built with the MERN stack, featuring a dynamic UI and an interactive AI chatbot powered by Google Gemini.
 
+**Live Demo:** [https://parmaryash.vercel.app/](https://parmaryash.vercel.app/)
+
 ## 🚀 Features
 
 - **Modern UI/UX**: Built with React 19, Tailwind CSS v4, and Framer Motion for smooth animations and glassmorphism effects.
@@ -25,8 +27,8 @@ A modern, high-performance portfolio website built with the MERN stack, featurin
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/portfolio.git
-cd portfolio
+git clone https://github.com/Yashpsct010/Portfolio-Latest.git
+cd Portfolio-Latest
 ```
 
 ### 2. Install Dependencies

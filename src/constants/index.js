@@ -73,6 +73,6 @@ export const CONTACT = {
   links: [
     { icon: FaLinkedin, url: "https://linkedin.com/in/y-sh/" },
     { icon: FaGithub, url: "https://github.com/yashpsct010" },
-    { icon: FaGlobe, url: "https://yash-parmar-portfolio.vercel.app" },
+    { icon: FaGlobe, url: "https://parmaryash.vercel.app/" },
   ],
 };
