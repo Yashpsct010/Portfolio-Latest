@@ -25,9 +25,12 @@ const Navbar = () => {
                     href="#home"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="text-2xl font-bold font-heading tracking-tighter text-primary"
+                    className="flex items-center gap-2"
                 >
-                    {HERO_CONTENT.name.split(' ')[0]}
+                    <img src="/logo.svg" alt="Logo" className="w-10 h-10" />
+                    <span className="text-xl font-bold font-heading tracking-tighter text-primary hidden sm:block">
+                        {HERO_CONTENT.name.split(' ')[0]}
+                    </span>
                 </motion.a>
 
                 {/* Desktop Menu */}
@@ -91,7 +94,7 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </nav >
     );
 };
 
