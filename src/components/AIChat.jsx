@@ -3,6 +3,56 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaRobot, FaPaperPlane, FaTimes } from 'react-icons/fa';
 
 const AIChat = () => {
+    const formatMessage = (content) => {
+        if (!content) return null;
+
+        const lines = content.split('\n');
+        return lines.map((line, lineIndex) => {
+            const isListItem = line.trim().startsWith('-');
+            const textContent = isListItem ? line.trim().substring(1).trim() : line;
+
+            if (!textContent.trim()) return <div key={lineIndex} className="h-2" />;
+
+            // Split by bold syntax first
+            const boldParts = textContent.split(/(\*\*.*?\*\*)/g);
+
+            const parsedLine = boldParts.map((part, partIndex) => {
+                if (part.startsWith('**') && part.endsWith('**')) {
+                    const boldText = part.slice(2, -2);
+                    return <strong key={partIndex} className="font-bold text-primary">{boldText}</strong>;
+                }
+
+                // Then split by URLs
+                const urlRegex = /(https?:\/\/[^\s]+)/g;
+                const urlParts = part.split(urlRegex);
+
+                return urlParts.map((subPart, subIndex) => {
+                    if (subPart.match(urlRegex)) {
+                        return (
+                            <a
+                                key={`${partIndex}-${subIndex}`}
+                                href={subPart}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-400 hover:text-blue-300 underline break-all"
+                            >
+                                {subPart}
+                            </a>
+                        );
+                    }
+                    return subPart;
+                });
+            });
+
+            return (
+                <div key={lineIndex} className={`${isListItem ? 'pl-4 flex items-start my-1' : 'my-0.5'}`}>
+                    {isListItem && <span className="mr-2 text-primary">•</span>}
+                    <span>{parsedLine}</span>
+                </div>
+            );
+        });
+    };
+
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
         { role: 'assistant', content: "Hi! I'm Yash's AI assistant. Ask me anything about his skills, experience, or projects!" }
@@ -108,7 +158,7 @@ const AIChat = () => {
                                             : 'bg-black/10 rounded-bl-none border border-gray/10'
                                             }`}
                                     >
-                                        {msg.content}
+                                        {formatMessage(msg.content)}
                                     </div>
                                 </div>
                             ))}
