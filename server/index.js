@@ -146,7 +146,7 @@ app.post('/api/chat', async (req, res) => {
   }
 
   try {
-    const modelName = "gemini-2.0-flash";
+    const modelName = "gemini-2.5-flash-lite";
     // console.log("Using Gemini Model:", modelName);
     const model = genAI.getGenerativeModel({ model: modelName });
     const systemPrompt = `
