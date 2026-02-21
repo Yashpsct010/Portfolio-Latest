@@ -12,14 +12,14 @@ export const ABOUT_CONTENT = {
 
 export const EXPERIENCES = [
   {
-    year: "March 2023 - Present",
-    role: "Software Developer",
+    year: "July 2024 - Present",
+    role: "Software Development Engineer",
     company: "Nerds & Geeks Pvt Ltd",
     description: "Spearheaded development for a client-facing MERN platform, increasing API throughput by 35% and ensuring 200ms average response times. Integrated Stripe and third-party APIs. Implemented caching and indexing strategies, cutting recurring DB query execution times from ~1.2s to ~0.7s.",
     technologies: ["MERN Stack", "Stripe API", "Redis", "Node.js"],
   },
   {
-    year: "Aug 2022 - Jan 2023",
+    year: "Jan 2024 - Jun 2024",
     role: "Full-stack Developer Intern",
     company: "Institute of Engineering & Science, IPS Academy",
     description: "Re-architected academic portal backend (CodeIgniter + MySQL), improving page load speed by 30% and lowering infrastructure costs by 10%. Automated grading workflows with REST APIs, eliminating 75% of manual work.",
