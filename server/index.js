@@ -159,8 +159,8 @@ Role: Full Stack Developer (MERN)
 Summary: Full-Stack Developer (MERN) with 2+ years of experience building scalable, high-performance web applications. Skilled in modern React (v19), Node.js, and API design.
 
 Experience:
-- Software Developer at Nerds & Geeks Pvt Ltd (March 2023 - Present): Spearheaded development for a client-facing MERN platform, increasing API throughput by 35%. Integrated Stripe and third-party APIs.
-- Full-stack Developer Intern at Institute of Engineering & Science, IPS Academy (Aug 2022 - Jan 2023): Re-architected academic portal backend (CodeIgniter + MySQL), improving page load speed by 30%.
+- Software Development Engineer at Nerds & Geeks Pvt Ltd (July 2024 - Present): Spearheaded development for a client-facing MERN platform, increasing API throughput by 35%. Integrated Stripe and third-party APIs.
+- Full-stack Developer Intern at Institute of Engineering & Science, IPS Academy (Jan 2024 - Jun 2024): Re-architected academic portal backend (CodeIgniter + MySQL), improving page load speed by 30%.
 
 Projects (ALWAYS include the live link when discussing these):
 1. TechInsightsAI
