@@ -31,9 +31,11 @@ export const PROJECTS = [
   {
     title: "TechInsightsAI",
     subtitle: "AI-driven, automated tech blogging",
-    description: "Built and deployed an AI-driven blogging platform that generates dynamic blog content using Google Gemini API. Automated workflows with GitHub Actions. Fetches relevant images from Unsplash API. PWA Support.",
-    technologies: ["MERN", "Vite", "Gemini API", "Unsplash API", "Vercel"],
+    description: "Engineered an automated pipeline (Node.js, Gemini AI, GitHub Actions) for SEO-optimized blogs daily. Built a resilient PWA with IndexedDB offline access and optimized performance via a hybrid Vercel/Render deployment strategy.",
+    technologies: ["Node.js", "Gemini AI", "GitHub Actions", "PWA", "IndexedDB", "Render", "Vercel"],
     link: "https://techinsightsai.vercel.app/",
+    githubLink: "https://github.com/Yashpsct010/techinsightsai",
+    image: "/projects/techinsightsai_real.png",
   },
   {
     title: "Reveal",
@@ -41,6 +43,8 @@ export const PROJECTS = [
     description: "Designed a responsive UI with Tailwind CSS v4 and shadcn/ui. Implemented secure authentication with Clerk. Modeled data with Prisma 6 & PostgreSQL. Improved resilience with Arcjet integration.",
     technologies: ["Next.js", "Tailwind", "shadcn/ui", "Clerk", "Prisma", "PostgreSQL"],
     link: "https://revealmyjournal.vercel.app/",
+    githubLink: "https://github.com/Yashpsct010/Reveal-Journal-App",
+    image: "/projects/reveal_real.png",
   },
   {
     title: "EatAnna",
@@ -48,22 +52,24 @@ export const PROJECTS = [
     description: "Designed subscription and order management system supporting secure recurring payments via Stripe. Implemented Google OAuth + OTP login. Integrated Cloudinary for efficient cloud-based media management.",
     technologies: ["MERN Stack", "Cloudinary", "Stripe API"],
     link: "https://eatanna.vercel.app/",
+    githubLink: "https://github.com/Yashpsct010/eatanna",
+    image: "/projects/eatanna_real.png",
   },
 ];
 
 export const SKILLS = [
-  "JavaScript ES6+",
-  "TypeScript",
-  "Python",
-  "React 19",
-  "Next.js",
-  "Tailwind CSS",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "PostgreSQL",
-  "Git",
-  "Docker",
+  { name: "JavaScript", icon: "SiJavascript" },
+  { name: "TypeScript", icon: "SiTypescript" },
+  { name: "Python", icon: "SiPython" },
+  { name: "React 19", icon: "SiReact" },
+  { name: "Next.js", icon: "SiNextdotjs" },
+  { name: "Tailwind CSS", icon: "SiTailwindcss" },
+  { name: "Node.js", icon: "SiNodedotjs" },
+  { name: "Express.js", icon: "SiExpress" },
+  { name: "MongoDB", icon: "SiMongodb" },
+  { name: "PostgreSQL", icon: "SiPostgresql" },
+  { name: "Git", icon: "SiGit" },
+  { name: "Docker", icon: "SiDocker" },
 ];
 
 export const CONTACT = {
@@ -72,7 +78,7 @@ export const CONTACT = {
   address: "Bengaluru, KA",
   links: [
     { icon: FaLinkedin, url: "https://linkedin.com/in/y-sh/" },
-    { icon: FaGithub, url: "https://github.com/yashpsct010" },
+    { icon: FaGithub, url: "https://github.com/Yashpsct010/" },
     { icon: FaGlobe, url: "https://parmaryash.vercel.app/" },
   ],
 };

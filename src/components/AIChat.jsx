@@ -112,6 +112,12 @@ const AIChat = () => {
                 className={`fixed bottom-6 right-6 w-14 h-14 bg-primary rounded-full shadow-lg shadow-primary/30 flex items-center justify-center text-white z-40 ${isOpen ? 'hidden' : 'flex'}`}
             >
                 <FaRobot size={24} />
+                {/* Notification Ping */}
+                <motion.span 
+                    className="absolute top-0 right-0 w-4 h-4 bg-accent rounded-full border-2 border-surface"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                />
             </motion.button >
 
             {/* Chat Window */}

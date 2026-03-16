@@ -98,15 +98,15 @@ const TerminalWindow = () => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full max-w-3xl mx-auto bg-[#1a1b26] rounded-lg overflow-hidden shadow-neo border-2 border-border font-mono text-left flex flex-col h-[400px]"
+            className="w-full max-w-3xl mx-auto bg-[#1a1b26] rounded-lg overflow-hidden shadow-neo border-2 border-border font-mono text-left flex flex-col h-[400px] md:h-[450px]"
             onClick={handleTerminalClick}
         >
             {/* Terminal Header */}
-            <div className="bg-[#24283b] px-4 py-2 flex items-center gap-2 border-b-2 border-border shrink-0">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
-                <div className="ml-4 text-xs text-gray-400 flex-1 text-center font-bold">
+            <div className="bg-[#24283b] px-3 md:px-4 py-2 flex items-center gap-1 md:gap-2 border-b-2 border-border shrink-0">
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500" />
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500" />
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500" />
+                <div className="ml-2 md:ml-4 text-[10px] md:text-xs text-gray-400 flex-1 text-center font-bold truncate">
                     user@portfolio:~
                 </div>
             </div>
@@ -114,22 +114,22 @@ const TerminalWindow = () => {
             {/* Terminal Body */}
             <div
                 ref={scrollRef}
-                className="p-6 flex-1 overflow-y-auto text-green-400 text-sm md:text-base leading-relaxed cursor-text"
+                className="p-4 md:p-6 flex-1 overflow-y-auto text-green-400 text-xs sm:text-sm md:text-base leading-relaxed cursor-text"
             >
                 {lines.map((line, i) => (
-                    <div key={i} className="whitespace-pre-wrap min-h-[1.5em]">{line}</div>
+                    <div key={i} className="whitespace-pre-wrap min-h-[1.5em] break-words">{line}</div>
                 ))}
 
                 {!isTypingIntro && (
-                    <div className="flex items-center">
-                        <span className="mr-2 text-blue-400">user@portfolio:~$</span>
+                    <div className="flex flex-wrap items-center">
+                        <span className="mr-2 text-blue-400 shrink-0">user@portfolio:~$</span>
                         <input
                             ref={inputRef}
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             onKeyDown={handleKeyDown}
-                            className="bg-transparent border-none outline-none text-green-400 flex-1 font-mono"
+                            className="bg-transparent border-none outline-none text-green-400 flex-1 min-w-[50px] font-mono"
                             autoFocus
                             spellCheck="false"
                             autoComplete="off"

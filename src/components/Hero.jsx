@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
+import { FiDownload } from 'react-icons/fi';
 import TerminalWindow from './TerminalWindow';
 
 const Hero = () => {
     return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-background">
+        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
             {/* Background Grid Pattern */}
             <div className="absolute inset-0 z-0 opacity-10"
                 style={{
@@ -41,6 +42,14 @@ const Hero = () => {
                             </a>
                             <a href="#contact" className="px-8 py-3 bg-transparent border-2 border-border text-[var(--text-main)] font-bold hover:bg-surface transition-colors">
                                 CONTACT ME
+                            </a>
+                            <a 
+                                href="https://drive.google.com/file/d/1NMrzSVVvsMu9N9wVGfho409NWCdGChTg/view?usp=sharing" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="px-8 py-3 bg-secondary text-white font-bold border-2 border-border neo-box flex items-center gap-2"
+                            >
+                                <FiDownload /> RESUME
                             </a>
                         </div>
                     </motion.div>

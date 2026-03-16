@@ -45,20 +45,13 @@ PORT=5000
 
 ### 4. Run the Application
 
-**Development Mode (Frontend + Backend)**
-To run both the frontend (Vite) and backend (Express) concurrently, you can use a tool like `concurrently` or run them in separate terminals.
+The project uses `concurrently` to run both the frontend and backend with a single command:
 
-**Terminal 1 (Frontend):**
 ```bash
 npm run dev
 ```
 
-**Terminal 2 (Backend):**
-```bash
-node server/index.js
-```
-
-The frontend will be available at `http://localhost:5173`.
+The frontend will be available at `http://localhost:5173` and the backend at `http://localhost:5000`.
 
 ## 📂 Project Structure
 

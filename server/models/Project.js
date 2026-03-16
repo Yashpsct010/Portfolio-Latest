@@ -6,6 +6,7 @@ const projectSchema = new mongoose.Schema({
   description: { type: String, required: true },
   technologies: [{ type: String }],
   link: { type: String },
+  githubLink: { type: String },
   image: { type: String }, // URL to image
 });
 

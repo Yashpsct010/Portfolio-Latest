@@ -1,5 +1,25 @@
 import { motion } from 'framer-motion';
 import { ABOUT_CONTENT, EXPERIENCES, SKILLS } from '../constants';
+import { 
+    SiJavascript, SiTypescript, SiPython, SiReact, SiNextdotjs, 
+    SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, 
+    SiGit, SiDocker 
+} from 'react-icons/si';
+
+const iconMap = {
+    SiJavascript: <SiJavascript />,
+    SiTypescript: <SiTypescript />,
+    SiPython: <SiPython />,
+    SiReact: <SiReact />,
+    SiNextdotjs: <SiNextdotjs />,
+    SiTailwindcss: <SiTailwindcss />,
+    SiNodedotjs: <SiNodedotjs />,
+    SiExpress: <SiExpress />,
+    SiMongodb: <SiMongodb />,
+    SiPostgresql: <SiPostgresql />,
+    SiGit: <SiGit />,
+    SiDocker: <SiDocker />,
+};
 
 const About = () => {
     return (
@@ -25,14 +45,15 @@ const About = () => {
                     <div className="flex flex-wrap justify-center gap-4">
                         {SKILLS.map((skill, index) => (
                             <motion.span
-                                key={skill}
+                                key={skill.name}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.05 }}
-                                className="px-4 py-2 bg-surface border border-neoborder rounded-full text-sm text-gray-700 dark:text-gray-300 hover:border-primary/50 hover:text-primary transition-colors cursor-default"
+                                className="px-5 py-3 bg-surface border-2 border-neoborder rounded-none text-sm font-bold text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary transition-all flex items-center gap-3 neo-box cursor-default"
                             >
-                                {skill}
+                                <span className="text-xl">{iconMap[skill.icon]}</span>
+                                {skill.name}
                             </motion.span>
                         ))}
                     </div>
