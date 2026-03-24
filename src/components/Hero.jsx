@@ -44,7 +44,7 @@ const Hero = () => {
                                 CONTACT ME
                             </a>
                             <a 
-                                href="https://drive.google.com/file/d/1NMrzSVVvsMu9N9wVGfho409NWCdGChTg/view?usp=sharing" 
+                                href="https://drive.google.com/file/d/1MN5wEbEtRiP3hjXKZgCLCxAunmPY4dHN/view?usp=sharing" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="px-8 py-3 bg-secondary text-white font-bold border-2 border-border neo-box flex items-center gap-2"

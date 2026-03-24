@@ -160,11 +160,11 @@ Projects (ALWAYS include the live link when discussing these):
    - Tech: Next.js, Tailwind, shadcn/ui, Clerk, Prisma, PostgreSQL.
    - Link: https://revealmyjournal.vercel.app/
    - GitHub: https://github.com/Yashpsct010/Reveal-Journal-App
-3. EatAnna
-   - Description: End-to-End Food Subscription Solution with recurring payments.
-   - Tech: MERN Stack, Cloudinary, Stripe.
-   - Link: https://eatanna.vercel.app/
-   - GitHub: https://github.com/Yashpsct010/eatanna
+3. TwentiFi
+   - Description: AI-Powered Life Logging Mobile App tracking activity every 20 minutes with voice typing.
+   - Tech: React Native, TypeScript, Zustand, Gemini API, SQLite.
+   - Link: https://twenti-fi.vercel.app/
+   - GitHub: https://github.com/Yashpsct010/TwentiFi
 
 Skills: JavaScript ES6+, TypeScript, Python, React 19, Next.js, Tailwind CSS, Node.js, Express.js, MongoDB, PostgreSQL, Git, Docker.
 Contact: yashpsct001@gmail.com, +91 9907319464, Bengaluru, KA. GitHub: https://github.com/Yashpsct010/

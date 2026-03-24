@@ -47,13 +47,13 @@ export const PROJECTS = [
     image: "/projects/reveal_real.png",
   },
   {
-    title: "EatAnna",
-    subtitle: "End-to-End Food Subscription Solution",
-    description: "Designed subscription and order management system supporting secure recurring payments via Stripe. Implemented Google OAuth + OTP login. Integrated Cloudinary for efficient cloud-based media management.",
-    technologies: ["MERN Stack", "Cloudinary", "Stripe API"],
-    link: "https://eatanna.vercel.app/",
-    githubLink: "https://github.com/Yashpsct010/eatanna",
-    image: "/projects/eatanna_real.png",
+    title: "TwentiFi",
+    subtitle: "AI-Powered Life Logging Mobile App",
+    description: "Designed a real-time event-driven logging system with SQLite and integrated Gemini API for voice transcription and insights. Managed high-frequency state updates efficiently using Zustand.",
+    technologies: ["React Native", "TypeScript", "Zustand", "Gemini API", "SQLite", "Tailwind (NativeWind)"],
+    link: "https://twenti-fi.vercel.app/",
+    githubLink: "https://github.com/Yashpsct010/TwentiFi",
+    image: "/projects/twenti-fi.png",
   },
 ];
 
